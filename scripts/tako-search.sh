@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: tako-search.sh <query> [--provider kab|groq|grok|grok_x] [--count N]
+Usage: tako-search.sh <query> [--provider groq|grok|grok_x] [--count N]
 
 Requires TAKO_API_KEY. Optional TAKO_BASE_URL (default https://tako.shiroha.tech).
 EOF
