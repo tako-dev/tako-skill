@@ -28,7 +28,7 @@
 | --- | --- | --- |
 | `query` | 是 | 非空查询文本 |
 | `count` | 否 | 默认 5，最多 20 |
-| `provider` | 否 | `kab`、`groq`、`grok`、`grok_x`；只筛选服务族，不指定渠道 |
+| `provider` | 否 | `groq`、`grok`、`grok_x`；只筛选服务族，不指定渠道。`kab` 已随 2026-11-21 KAB 下线，不再是可用 provider |
 
 默认不传 provider，由渠道优先级/权重选择。需要筛选时：
 
@@ -52,7 +52,7 @@ curl --fail-with-body -sS --max-time 60 "$TAKO_BASE_URL/v1/search" \
 ```json
 {
   "query": "capital of Japan",
-  "provider": "kab",
+  "provider": "groq",
   "answer": "Search results for: capital of Japan…",
   "results": [
     {"title": "Capital of Japan", "url": "https://en.wikipedia.org/wiki/Capital_of_Japan", "snippet": "…"}
@@ -62,4 +62,4 @@ curl --fail-with-body -sS --max-time 60 "$TAKO_BASE_URL/v1/search" \
 
 部分 Groq 请求可能只返回 `answer`，空 `results` 不一定是失败。没有来源时明确说明，不要编造 URL。搜索也消费账户或订阅额度。
 
-helper 使用 curl，HTTP 错误时进程仍可能退出 0；检查返回的错误 JSON，不能只看 shell 退出码。直接请求示例用 `--fail-with-body` 保留错误响应并返回非零状态。不用 chat-completions 模拟这个接口，也不发明 `kab_search` 等能力名。
+helper 使用 curl，HTTP 错误时进程仍可能退出 0；检查返回的错误 JSON，不能只看 shell 退出码。直接请求示例用 `--fail-with-body` 保留错误响应并返回非零状态。不用 chat-completions 模拟这个接口，也不发明不存在的能力名。
