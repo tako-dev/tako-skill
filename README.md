@@ -13,7 +13,7 @@
 | 🎨 生图与改图 | `gpt-image-2`、`gpt-image-2.5-flare/sunburst`、`gemini-3.1-flash-image`、`grok-imagine-image-quality`、`wan2.7-image(-pro)` | 文生图、单图精修改色、多参考图融合（GPT/Gemini/Grok 已实测两图） | [`tako-image.sh`](scripts/tako-image.sh) · [图片指南](references/images.md) |
 | 🎬 视频生成与编辑 | `grok-imagine-video-1.5`（支持 `480p` / `720p` / `1080p`，1–15 秒） | 文生视频、图生视频、首尾帧插值（`--last-frame`）、多参考图角色一致（`--ref-image`）、MP4 编辑与无缝续写 | [`tako-video.sh`](scripts/tako-video.sh) · [视频指南](references/video.md) |
 | 🎙️ 冰糖语音与克隆 | `mimo-v2.5-tts`（默认「冰糖」）、`mimo-v2.5-tts-instruct`、`mimo-v2.5-tts-voiceclone`、`speech_asr` | 一句话冰糖配音、情绪/语速/口吻指令控制、≤10MB 样本零样本声音克隆、多语种 ASR 转写 | [`tako-audio.sh`](scripts/tako-audio.sh) · [语音指南](references/audio.md) |
-| 🌐 实时联网溯源 | `POST /v1/search`（`kab` / `groq` / `grok` / `grok_x`） | 检索最新技术资料、产品文档与实时动态，返回结构化摘要与真实可引用 `results[].url` | [`tako-search.sh`](scripts/tako-search.sh) · [搜索指南](references/search.md) |
+| 🌐 实时联网溯源 | `POST /v1/search`（`groq` / `grok` / `grok_x`） | 检索最新技术资料、产品文档与实时动态，返回结构化摘要与真实可引用 `results[].url` | [`tako-search.sh`](scripts/tako-search.sh) · [搜索指南](references/search.md) |
 | 🧠 外脑会诊与结构化决策 | 深度会诊 `gpt-6.2-sol`（`/v1/chat/completions`）+ 结构化判别 `jev-latest`（`/v1/systemone`） | 跨模型架构/代码挑刺会诊（挑战盲点与并发竞态）＋ `Choice` / `Score` / `Noul` 确定性路由打分 | [`tako-consult.sh`](scripts/tako-consult.sh) · [外脑指南](references/consult.md) · [System One](references/systemone.md) |
 
 ---
